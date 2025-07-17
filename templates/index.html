@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Track Your Activities</h1>
+    <form method="post">
+      <input
+        type="text"
+        name="activity"
+        placeholder="What are you doing?"
+        required
+      />
+      <button type="submit">Add Activity</button>
+    </form>
+    <form method="get" action="/">
+      <input
+        type="text"
+        name="keyword"
+        placeholder="Search by keyword"
+        value="{{ keyword }}"
+      />
+      <input type="date" name="date" value="{{ date }}" />
+      <button type="submit">Filter</button>
+    </form>
+
+    <h2>All Activities</h2>
+    <ul>
+      {% for entry in activities %}
+      <li>{{ entry.timestamp }} — {{ entry.activity }}</li>
+      {% else %}
+      <li>No activities yet!</li>
+      {% endfor %}
+    </ul>
+
+    <br />
+    <a href="{{ url_for('show_analytics') }}">View Analytics</a>
+  </body>
+</html>

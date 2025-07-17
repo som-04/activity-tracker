@@ -1,0 +1,31 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Flask environment and instance folders
+.flaskenv
+.env
+instance/
+*.db
+*.sqlite3
+
+# Project data files
+activities.json
+
+# Flask cache/static build artifacts
+static/*.css.map
+static/*.js.map
+
+# Editor and OS-specific
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
